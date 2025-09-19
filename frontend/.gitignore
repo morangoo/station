@@ -1,0 +1,21 @@
+
+.DS_Store
+/node_modules/
+
+# React Router
+/.react-router/
+/build/
+
+# Environment files
+.env
+.env.local
+
+# IDE settings
+.vscode/
+.idea/
+
+# Vite cache
+.vite
+
+# OS/Editor junk
+Thumbs.db
