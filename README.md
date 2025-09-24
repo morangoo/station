@@ -1,7 +1,5 @@
 <img src="https://i.imgur.com/corsos2.png" width="100%">
 
-# ✨ Station Project: Contributor Guide
-
 Welcome to **Station**! This guide will help you set up, run, and contribute to the project—whether you prefer Docker or a local environment. Follow the steps below to get started and join our community of builders.
 
 ---
@@ -21,8 +19,6 @@ Welcome to **Station**! This guide will help you set up, run, and contribute to 
 
 ## 🐳 Quick Start with Docker
 
-> **Recommended for most users!**
-
 ### Prerequisites
 - [Docker Desktop](https://www.docker.com/products/docker-desktop)
 - [Git](https://git-scm.com/downloads)
@@ -33,15 +29,23 @@ Welcome to **Station**! This guide will help you set up, run, and contribute to 
    git clone https://github.com/morangoo/station.git
    cd station
    ```
+
 2. **Start all services:**
    ```sh
    docker-compose up --build
    ```
-3. **Access the apps:**
+
+3. **Initialize the database (run migrations and seed roles):**
+   ```sh
+   docker-compose exec backend php artisan migrate
+   docker-compose exec backend php artisan db:seed
+   ```
+
+4. **Access the apps:**
    - Frontend: [http://localhost:3000](http://localhost:3000)
    - Backend API: [http://localhost:8000](http://localhost:8000)
 
-4. **Stop services:**
+5. **Stop services:**
    ```sh
    docker-compose down
    ```
@@ -49,8 +53,6 @@ Welcome to **Station**! This guide will help you set up, run, and contribute to 
 ---
 
 ## 🖥️ Manual Setup (No Docker)
-
-> For advanced users or those who want full control.
 
 ### Prerequisites
 - [Node.js & npm](https://nodejs.org/) (v18+ recommended)
@@ -138,17 +140,3 @@ cp frontend/.env.example frontend/.env
 | Stop containers       | `docker-compose down`                    |
 | Run backend tests     | `cd backend && php artisan test`         |
 | Run frontend tests    | `cd frontend && npm test`                |
-
----
-
-## 🌟 Get Involved
-
-- Open an issue for questions or bugs
-- Join our discussions to share ideas
-- Submit a pull request to contribute
-
----
-
-Happy coding! 🚀
-
----
