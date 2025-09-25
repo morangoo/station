@@ -41,18 +41,19 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    working_dir: /usr/src/app
+    working_dir: /app
     volumes:
-      - ./frontend:/usr/src/app
+      - ./frontend:/app
     environment:
+      - API_URL=${API_URL}
+      - APP_NAME=${APP_NAME}
+      - NODE_ENV=${NODE_ENV}
       - HOST=0.0.0.0
-      - PORT=3000
-      - API_URL=http://backend:8000
     depends_on:
       - backend
     ports:
       - "3000:3000"
-    command: sh -c "npm install --legacy-peer-deps && npm run dev -- --host 0.0.0.0 --port 3000"
+    command: sh -c "npm install --legacy-peer-deps && npm run dev"
 
 volumes:
   db-data:
