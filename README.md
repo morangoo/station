@@ -1,8 +1,5 @@
 <img src="https://i.imgur.com/corsos2.png" width="100%">
 
-Welcome to **Station**! This guide apresenta o projeto e sua stack. Para instruções de instalação e uso, veja [INSTALL.md](./INSTALL.md). Para contribuir, veja [CONTRIBUTING.md](./CONTRIBUTING.md).
-
----
 
 <!-- Tech Stack Section -->
 <p align="center">
